@@ -11,8 +11,8 @@ public static class EnhancedConsole
     private const float MAX_HUE = 1.0f;
     private const float MIN_SATURATION = 0.4f;
     private const float MAX_SATURATION = 1.0f;
-    private const float MIN_VALUE = 0.4f;
-    private const float MAX_VALUE = 1.0f;
+    private const float MIN_VALUE = 0.5f;
+    private const float MAX_VALUE = 0.6f;
 
     private delegate void LogMethod(string message, Object context);
 
