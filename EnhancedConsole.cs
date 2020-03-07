@@ -6,7 +6,10 @@ using UnityEngine;
 /// </summary>
 public static class EnhancedConsole
 {
-    private const string MESSAGE_FORMAT = "[<color=#{0:X2}{1:X2}{2:X2}>{3}</color>] {4}";
+    private const string MESSAGE_FORMAT = "[<color=#{0}>{1}</color>] <color=#{2}>{3}</color>";
+    private const string INFO_COLOR_CODE = "fcfcfc";
+    private const string WARNING_COLOR_CODE = "ffe44c";
+    private const string ERROR_COLOR_CODE = "b10c0c";
     private const float MIN_HUE = 0.0f;
     private const float MAX_HUE = 1.0f;
     private const float MIN_SATURATION = 0.4f;
@@ -23,7 +26,7 @@ public static class EnhancedConsole
     /// </summary>
     public static void LogInfo(in string tag, in string info, in Object context = null)
     {
-        Log(Debug.Log, in tag, in info, in context);
+        Log(Debug.Log, in tag, in info, INFO_COLOR_CODE, in context);
     }
 
     /// <summary>
@@ -31,7 +34,7 @@ public static class EnhancedConsole
     /// </summary>
     public static void LogWarning(in string tag, in string warning, in Object context = null)
     {
-        Log(Debug.LogWarning, in tag, in warning, in context);
+        Log(Debug.LogWarning, in tag, in warning, WARNING_COLOR_CODE, in context);
     }
 
     /// <summary>
@@ -39,7 +42,7 @@ public static class EnhancedConsole
     /// </summary>
     public static void LogError(in string tag, in string error, in Object context = null)
     {
-        Log(Debug.LogError, in tag, in error, in context);
+        Log(Debug.LogError, in tag, in error, ERROR_COLOR_CODE, in context);
     }
 
     /// <summary>
@@ -60,13 +63,11 @@ public static class EnhancedConsole
         return s_TagDictionary[tag];
     }
 
-    private static void Log(in LogMethod logMethod, in string tag, in string message, in Object context)
+    private static void Log(in LogMethod logMethod, in string tag, in string message, in string messageColorCode, in Object context)
     {
         Color tagColor = GetTagColor(in tag);
-        byte red = (byte)(tagColor.r * 255f);
-        byte green = (byte)(tagColor.g * 255f);
-        byte blue = (byte)(tagColor.b * 255f);
+        string tagColorCode = ColorUtility.ToHtmlStringRGB(tagColor);
 
-        logMethod(string.Format(MESSAGE_FORMAT, red, green, blue, tag, message), context);
+        logMethod(string.Format(MESSAGE_FORMAT, tagColorCode, tag, messageColorCode, message), context);
     }
 }
