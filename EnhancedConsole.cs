@@ -11,11 +11,11 @@ public static class EnhancedConsole
     private const string WARNING_COLOR_CODE = "ffe44c";
     private const string ERROR_COLOR_CODE = "b10c0c";
     private const float MIN_HUE = 0.0f;
-    private const float MAX_HUE = 1.0f;
-    private const float MIN_SATURATION = 0.4f;
-    private const float MAX_SATURATION = 1.0f;
-    private const float MIN_VALUE = 0.5f;
-    private const float MAX_VALUE = 0.6f;
+    private const float MAX_HUE = 0.89f;
+    private const float MIN_SATURATION = 0.66f;
+    private const float MAX_SATURATION = 0.99f;
+    private const float MIN_VALUE = 0.42f;
+    private const float MAX_VALUE = 0.98f;
 
     private delegate void LogMethod(string message, Object context);
 
