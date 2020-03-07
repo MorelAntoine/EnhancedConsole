@@ -9,7 +9,7 @@ Allow to display distinguishable message with unique tag color
 
     EnhancedConsole.LogInfo("Network", "entity created");
     
-    EnhancedConsole.LogWarning("Animator", "walk animation not found")
+    EnhancedConsole.LogWarning("Animator", "walk animation not found");
     
     EnhancedConsole.LogError("Collision", "No collider attach", gameObject);
 
