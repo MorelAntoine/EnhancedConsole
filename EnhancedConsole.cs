@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Allows to display console content in a enhanced way.
+/// Allows to log messages into the Unity Console with distinct colors.
 /// </summary>
 public static class EnhancedConsole
 {
@@ -22,7 +22,7 @@ public static class EnhancedConsole
     private static Dictionary<string, Color> s_TagDictionary = new Dictionary<string, Color>();
 
     /// <summary>
-    /// Logs an info into the Unity Console with a unique tag color.
+    /// Logs an info into the Unity Console with distinct colors.
     /// </summary>
     public static void LogInfo(in string tag, in string info, in Object context = null)
     {
@@ -30,7 +30,7 @@ public static class EnhancedConsole
     }
 
     /// <summary>
-    /// Logs a warning message into the Unity Console with a unique tag color.
+    /// Logs a warning into the Unity Console with distinct colors.
     /// </summary>
     public static void LogWarning(in string tag, in string warning, in Object context = null)
     {
@@ -38,7 +38,7 @@ public static class EnhancedConsole
     }
 
     /// <summary>
-    /// Logs an error message into the Unity Console with a unique tag color.
+    /// Logs an error into the Unity Console with distinct colors.
     /// </summary>
     public static void LogError(in string tag, in string error, in Object context = null)
     {
@@ -46,7 +46,7 @@ public static class EnhancedConsole
     }
 
     /// <summary>
-    /// Logs an error message into the Unity Console.
+    /// Logs an exception into the Unity Console.
     /// </summary>
     public static void LogException(in System.Exception exception, in Object context = null)
     {
