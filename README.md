@@ -1,5 +1,5 @@
 # EnhancedConsole
-Allow to display distinguishable message with unique tag color
+Allows to log messages into the Unity Console with distinct colors.
 
 # Format
 
